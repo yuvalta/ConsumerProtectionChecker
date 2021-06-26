@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useContext} from "react";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-
+import { UserContext } from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
 
 function Alert(props) {
@@ -25,35 +25,32 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
 
+  const website = useContext(UserContext);
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
-  const [website, setWebsite] = useState("");
 
   const handleClick = () => {
     setOpen(true);
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
     setOpen(false);
   };
 
   function submitWebsite() {
-    setWebsite("אין בעיות באתר!")
+    console.log("here")
     handleClick();
   }
 
   return (
     <div>
       <Header/>
+
       <div className={classes.root}>
         <SearchBar/>
 
-        <Button onClick={() => submitWebsite("aaa")} variant="contained" color="primary" className={classes.content}>
+        <Button onClick={() => submitWebsite()} variant="contained" color="primary" className={classes.content}>
           תבדקו לי
         </Button>
 
@@ -62,7 +59,9 @@ const App = () => {
             {website}
           </Alert>
         </Snackbar>
+
       </div>
+
     </div>
   );
 }

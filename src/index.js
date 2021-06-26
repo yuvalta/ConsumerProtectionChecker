@@ -1,5 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/App";
+import {UserProvider} from "./UserContext"
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <UserProvider>
+    <App/>
+  </UserProvider>,
+  document.querySelector("#root"));
