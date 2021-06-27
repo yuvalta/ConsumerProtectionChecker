@@ -12,7 +12,11 @@ const SearchBar = () => {
 
   return (
     <form noValidate autoComplete="off">
-      <TextField onChange={(event) => setTextFieldValue(event)} id="outlined-basic" label="Enter website address" fullWidth variant="outlined"/>
+      <TextField onChange={(event) => setTextFieldValue(event)}
+                 onSubmit={(event) => setTextFieldValue(event)}
+                 id="outlined-basic" label="Enter website address"
+                 fullWidth
+                 variant="outlined"/>
     </form>
   );
 }

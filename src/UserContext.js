@@ -1,8 +1,8 @@
 import React, {createContext, useState} from "react";
 
-export const UserContext = createContext();
+const UserContext = createContext("default website");
 
-export const UserProvider = ({children}) => {
+const UserProvider = ({children}) => {
   const [website, setWebsite] = useState("None");
 
   return (
@@ -13,3 +13,5 @@ export const UserProvider = ({children}) => {
     </UserContext.Provider>
   );
 };
+
+export { UserContext, UserProvider };

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
 
-  const website = useContext(UserContext);
+  const {website, setWebsite} = useContext(UserContext);
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
