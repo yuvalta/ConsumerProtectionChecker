@@ -2,14 +2,11 @@ import React, {useState, useContext} from "react";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
 import Button from '@material-ui/core/Button';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
-import { UserContext } from '../UserContext';
+import BottomToast from './BottomToast';
+import {UserContext} from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
+import axios from "axios";
 
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,11 +21,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-
-  const {website, setWebsite} = useContext(UserContext);
-  const classes = useStyles();
+  const {website, setWebsite, time, setTime} = useContext(UserContext);
 
   const [open, setOpen] = useState(false);
+
+  const classes = useStyles();
 
   const handleClick = () => {
     setOpen(true);
@@ -38,10 +35,22 @@ const App = () => {
     setOpen(false);
   };
 
+  const getTime = async () => {
+    const res = await axios.get(`http://127.0.0.1:5000/time`);
+    setTime(res.data.time)
+  }
+
   function submitWebsite() {
-    console.log("here")
+    // start spinner
+
+    // send to server
+    getTime();
+    // wait for response
+    // show response
     handleClick();
   }
+
+  console.log({time})
 
   return (
     <div>
@@ -54,11 +63,7 @@ const App = () => {
           תבדקו לי
         </Button>
 
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="success">
-            {website}
-          </Alert>
-        </Snackbar>
+        <BottomToast open={open} onClose={handleClose} color="success" message={time}/>
 
       </div>
 

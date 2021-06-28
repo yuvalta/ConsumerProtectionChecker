@@ -6,7 +6,6 @@ const SearchBar = () => {
   const website = useContext(UserContext);
 
   function setTextFieldValue(event) {
-    // console.log(event.target.value)
     website.setWebsite(event.target.value);
   }
 
