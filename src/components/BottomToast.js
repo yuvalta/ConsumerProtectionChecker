@@ -9,15 +9,21 @@ function Alert(props) {
 
 const BottomToast = ({color, message}) => {
 
-  const {openToast, setOpenToast, statusToast, messageToast} = useContext(UserContext);
+  const {openToast, setOpenToast, statusToast, messageToast, setStatusToast, setMessageToast} = useContext(UserContext);
 
   return (
-    <Snackbar open={openToast} autoHideDuration={6000} onClose={() => setOpenToast(false)}>
+    <Snackbar open={openToast} onClose={handleClose}>
       <Alert severity={statusToast}>
         {messageToast}
       </Alert>
     </Snackbar>
   );
+
+  function handleClose() {
+    setOpenToast(false)
+    // setStatusToast('info')
+    // setMessageToast('')
+  }
 }
 
 export default BottomToast;
