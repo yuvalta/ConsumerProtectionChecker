@@ -1,23 +1,48 @@
 import React, {useState, useContext} from "react";
 import TextField from '@material-ui/core/TextField';
-import { UserContext } from '../UserContext';
+import {UserContext} from '../UserContext';
+import useSendToServer from "../hooks/useSendToServer";
+
+const MAX_LENGTH_WEBSITE_URL = 500;
 
 const SearchBar = () => {
   const website = useContext(UserContext);
+  const [sendToServer] = useSendToServer()
 
-  function setTextFieldValue(event) {
-    website.setWebsite(event.target.value);
-  }
+  const [error, setError] = useState("");
 
   return (
-    <form noValidate autoComplete="off">
-      <TextField onChange={(event) => setTextFieldValue(event)}
-                 onSubmit={(event) => setTextFieldValue(event)}
+    <form noValidate autoComplete="off" onSubmit={onSubmit}>
+      <TextField onChange={(event) => validateWebsiteValue(event)}
+                 error={error !== ""}
+                 helperText={error !== "" ? error : ' '}
                  id="outlined-basic" label="Enter website address"
                  fullWidth
                  variant="outlined"/>
     </form>
   );
+
+  function onSubmit(event) {
+    event.preventDefault()
+
+    sendToServer(website.website)
+  };
+
+
+  function validateWebsiteValue(event) {
+    const website_address = event.target.value;
+
+    if (website_address.length > MAX_LENGTH_WEBSITE_URL) {
+      setError("קישור ארוך מידי")
+      return
+    } else {
+      setError("")
+    }
+
+    console.log("3 " + website_address)
+    website.setWebsite(website_address)
+    console.log(website)
+  }
 }
 
 export default SearchBar;
