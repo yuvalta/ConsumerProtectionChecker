@@ -21,9 +21,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  const {website, setWebsite, time, setTime} = useContext(UserContext);
+  const {website, setWebsite} = useContext(UserContext);
 
   const [open, setOpen] = useState(false);
+  const [response, setResponse] = useState(false);
+  const [status, setStatus] = useState('info');
 
   const classes = useStyles();
 
@@ -35,22 +37,32 @@ const App = () => {
     setOpen(false);
   };
 
-  const getTime = async () => {
-    const res = await axios.get(`http://127.0.0.1:5000/time`);
-    setTime(res.data.time)
+  const getTime = () => {
+
+    axios.post('http://127.0.0.1:5000/validate_web', {
+      website_url: website
+    }).then((response) => {
+      console.log(response)
+      if (response.status === 200) {
+        setResponse("סריקה התחילה");
+        setStatus("success");
+      }
+    }, (error) => {
+      console.log(error);
+      setResponse("שגיאה בסריקה");
+      setStatus('error');
+    });
   }
 
   function submitWebsite() {
     // start spinner
-
+    // encrypt website
     // send to server
     getTime();
     // wait for response
     // show response
     handleClick();
   }
-
-  console.log({time})
 
   return (
     <div>
@@ -63,7 +75,7 @@ const App = () => {
           תבדקו לי
         </Button>
 
-        <BottomToast open={open} onClose={handleClose} color="success" message={time}/>
+        <BottomToast open={open} onClose={handleClose} color={status} message={response}/>
 
       </div>
 
