@@ -39,9 +39,7 @@ const SearchBar = () => {
       setError("")
     }
 
-    console.log("3 " + website_address)
     website.setWebsite(website_address)
-    console.log(website)
   }
 }
 

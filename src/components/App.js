@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
 import BottomToast from './BottomToast';
@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {UserContext} from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,11 +34,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const App = () => {
-  const {website, openToast, statusToast} = useContext(UserContext);
+  const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
   const [sendToServer] = useSendToServer()
 
   const classes = useStyles();
-
 
   return (
     <div>
@@ -62,7 +60,7 @@ const App = () => {
 
       <div>
         {!openToast || statusToast === 'error' || statusToast === 'success' ? <div></div> :
-          <CircularProgress className={classes.center}/>
+          <CircularProgress className={classes.center} variant="determinate" value={progress}/>
         }
       </div>
     </div>
