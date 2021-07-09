@@ -7,11 +7,11 @@ const useSendToServer = () => {
 
   const {setOpenToast, setStatusToast, setMessageToast, setProgress} = useContext(UserContext);
 
-  var sio
+  // sio = io('http://127.0.0.1:8000');
+  var sio = io('https://consumer-checker.herokuapp.com');
 
   useEffect(() => {
-      // sio = io('http://127.0.0.1:8000');
-      sio = io('https://consumer-checker.herokuapp.com');
+
 
       sio.on('connect', () => {
         // debugger
