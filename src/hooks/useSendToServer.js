@@ -3,17 +3,18 @@ import axios from "axios";
 import {UserContext} from "../UserContext";
 import io from "socket.io-client";
 
-// export const sio = io('http://127.0.0.1:8000');
-export const sio = io('https://consumer-checker.herokuapp.com');
-
-
-
-const useSendToServer = (url) => {
+const useSendToServer = () => {
 
   const {setOpenToast, setStatusToast, setMessageToast, setProgress} = useContext(UserContext);
 
+  var sio
+
   useEffect(() => {
+      // sio = io('http://127.0.0.1:8000');
+      sio = io('https://consumer-checker.herokuapp.com');
+
       sio.on('connect', () => {
+        // debugger
         console.log('connected')
       });
 
@@ -21,12 +22,20 @@ const useSendToServer = (url) => {
         console.log('disconnected')
       });
 
+      sio.on('error', () => {
+        console.log('error!')
+        setMessageToast("error");
+        setStatusToast('error');
+      });
+
       sio.on('status_update', (data) => {
+        const currentPercentages = parseInt(data.percentages);
         console.log(data)
 
-        setProgress(parseInt(data))
+        setProgress(currentPercentages)
+        setMessageToast(data.phase);
 
-        if (data === 100) {
+        if (currentPercentages === 100) {
           setMessageToast('סריקה הסתיימה בהצלחה');
           setStatusToast('success');
         }
@@ -41,21 +50,6 @@ const useSendToServer = (url) => {
     setStatusToast('info')
 
     sio.emit('start_checking', url)
-
-    // axios.post('http://127.0.0.1:5000/validate_web', {
-    //   website_url: url
-    // }).then((response) => {
-    //   console.log(response)
-    //
-    //   if (response.status === 200) {
-    //     setMessageToast(response.data);
-    //     setStatusToast("success");
-    //   }
-    // }, (error) => {
-    //   console.log(error);
-    //   setMessageToast("error");
-    //   setStatusToast('error');
-    // })
   };
 
   return [sendToServer];

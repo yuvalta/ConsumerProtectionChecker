@@ -7,12 +7,12 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const BottomToast = ({color, message}) => {
+const BottomToast = () => {
 
-  const {openToast, setOpenToast, statusToast, messageToast, setStatusToast, setMessageToast} = useContext(UserContext);
+  const {openToast, setOpenToast, statusToast, messageToast} = useContext(UserContext);
 
   return (
-    <Snackbar open={openToast} onClose={handleClose}>
+    <Snackbar open={openToast} onClose={statusToast === 'error' || statusToast === 'success' ? handleClose : null}>
       <Alert severity={statusToast}>
         {messageToast}
       </Alert>
@@ -21,8 +21,6 @@ const BottomToast = ({color, message}) => {
 
   function handleClose() {
     setOpenToast(false)
-    // setStatusToast('info')
-    // setMessageToast('')
   }
 }
 
