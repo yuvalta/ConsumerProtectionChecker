@@ -5,6 +5,7 @@ import BottomToast from './BottomToast';
 import useSendToServer from '../hooks/useSendToServer';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import {UserContext} from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
 
@@ -42,7 +43,7 @@ const App = () => {
   const getMainBody = () => {
     return (
       // <div className={!openToast || statusToast === 'error' || statusToast === 'success' ? classes.root : classes.root_disabled}>
-      <div className= {classes.root}>
+      <div className={classes.root}>
         <SearchBar/>
         <Button onClick={() => sendToServer(website)} variant="contained" color="primary"
                 className={classes.content}>
@@ -63,7 +64,9 @@ const App = () => {
             ?
             getMainBody()
             :
-            <CircularProgress className={classes.center} variant="determinate" value={progress}/>
+            <CircularProgress className={classes.center}
+                              variant={progress === 100 || progress === 0 ? "indeterminate" : "determinate"}
+                              value={progress}/>
           }
         </div>
 

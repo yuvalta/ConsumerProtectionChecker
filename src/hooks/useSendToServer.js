@@ -27,18 +27,21 @@ const useSendToServer = () => {
         setStatusToast('error');
       });
 
+      sio.on('final_score', (score) => {
+        console.log(score)
+
+        setProgress(0)
+        setMessageToast(`סריקה הסתיימה בהצלחה - ליקויים בשווי של ${score}`);
+        setStatusToast('success');
+
+      });
+
       sio.on('status_update', (data) => {
         const currentPercentages = parseInt(data.percentages);
         console.log(data)
 
         setProgress(currentPercentages)
         setMessageToast(data.phase);
-
-        if (currentPercentages === 100) {
-          setMessageToast('סריקה הסתיימה בהצלחה');
-          setStatusToast('success');
-        }
-
       });
     }, []
   )
