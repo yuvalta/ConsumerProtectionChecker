@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/ConsumerProtectionChecker/static/js/main.9962fb8d.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.9962fb8d.chunk.js.map",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.b06662d5.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.b06662d5.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
     "static/js/2.94217147.chunk.js": "/ConsumerProtectionChecker/static/js/2.94217147.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
     "static/js/2.94217147.chunk.js",
-    "static/js/main.9962fb8d.chunk.js"
+    "static/js/main.b06662d5.chunk.js"
   ]
 }
