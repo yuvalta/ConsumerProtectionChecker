@@ -1,14 +1,13 @@
 import React, {useState, useEffect, useContext} from "react";
-import axios from "axios";
 import {UserContext} from "../UserContext";
 import io from "socket.io-client";
+
+// export const sio = io('http://127.0.0.1:8000');
+export const sio = io('https://consumer-checker.herokuapp.com');
 
 const useSendToServer = () => {
 
   const {setOpenToast, setStatusToast, setMessageToast, setProgress} = useContext(UserContext);
-
-  // sio = io('http://127.0.0.1:8000');
-  var sio = io('https://consumer-checker.herokuapp.com');
 
   useEffect(() => {
 
