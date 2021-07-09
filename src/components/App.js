@@ -39,30 +39,39 @@ const App = () => {
 
   const classes = useStyles();
 
+  const getMainBody = () => {
+    return (
+      // <div className={!openToast || statusToast === 'error' || statusToast === 'success' ? classes.root : classes.root_disabled}>
+      <div className= {classes.root}>
+        <SearchBar/>
+        <Button onClick={() => sendToServer(website)} variant="contained" color="primary"
+                className={classes.content}>
+          תבדקו לי
+        </Button>
+      </div>
+    );
+  };
+
+
   return (
     <div>
       <div>
         <Header/>
 
-        <div
-          className={!openToast || statusToast === 'error' || statusToast === 'success' ? classes.root : classes.root_disabled}>
-          <SearchBar/>
-
-          <Button onClick={() => sendToServer(website)} variant="contained" color="primary" className={classes.content}>
-            תבדקו לי
-          </Button>
-
+        <div>
+          {!openToast || statusToast === 'error' || statusToast === 'success'
+            ?
+            getMainBody()
+            :
+            <CircularProgress className={classes.center} variant="determinate" value={progress}/>
+          }
         </div>
 
         <BottomToast/>
 
       </div>
 
-      <div>
-        {!openToast || statusToast === 'error' || statusToast === 'success' ? <div></div> :
-          <CircularProgress className={classes.center} variant="determinate" value={progress}/>
-        }
-      </div>
+
     </div>
   );
 };
