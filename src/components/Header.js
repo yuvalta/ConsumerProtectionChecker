@@ -21,7 +21,7 @@ const Header = () => {
     <AppBar position="static" className={classes.root}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          מערכת לבדיקת האתר שלך!
+          בדיקת אתרים
         </Typography>
       </Toolbar>
     </AppBar>
