@@ -5,7 +5,7 @@ import BottomToast from './BottomToast';
 import useSendToServer from '../hooks/useSendToServer';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import ProgressBar from 'react-customizable-progressbar'
 import {UserContext} from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   center: {
-    position: 'absolute',
+    position: 'fixed',
     left: '50%',
     top: '50%',
   },
@@ -64,9 +64,22 @@ const App = () => {
             ?
             getMainBody()
             :
-            <CircularProgress className={classes.center}
-                              variant={progress === 100 || progress === 0 ? "indeterminate" : "determinate"}
-                              value={progress}/>
+            <ProgressBar
+              className={classes.center}
+              radius={100}
+              progress={progress}
+              cut={120}
+              rotate={-210}
+              initialAnimation
+              initialAnimationDelay={500}
+              strokeWidth={28}
+              strokeColor="#ffce54"
+              trackStrokeWidth={14}
+              trackStrokeLinecap="butt"
+            />
+            // <CircularProgress className={classes.center}
+            //                   variant={progress === 100 || progress === 0 ? "indeterminate" : "determinate"}
+            //                   value={progress}/>
           }
         </div>
 
