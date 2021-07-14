@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/ConsumerProtectionChecker/static/js/main.69033ca5.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.69033ca5.chunk.js.map",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.3f430b0e.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.3f430b0e.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
-    "static/js/2.5dbf517c.chunk.js": "/ConsumerProtectionChecker/static/js/2.5dbf517c.chunk.js",
-    "static/js/2.5dbf517c.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.5dbf517c.chunk.js.map",
+    "static/js/2.71e3b87b.chunk.js": "/ConsumerProtectionChecker/static/js/2.71e3b87b.chunk.js",
+    "static/js/2.71e3b87b.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.71e3b87b.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
-    "static/js/2.5dbf517c.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.5dbf517c.chunk.js.LICENSE.txt"
+    "static/js/2.71e3b87b.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.71e3b87b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
-    "static/js/2.5dbf517c.chunk.js",
-    "static/js/main.69033ca5.chunk.js"
+    "static/js/2.71e3b87b.chunk.js",
+    "static/js/main.3f430b0e.chunk.js"
   ]
 }
