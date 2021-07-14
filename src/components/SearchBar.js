@@ -18,6 +18,7 @@ const SearchBar = () => {
                  helperText={error !== "" ? error : ' '}
                  id="outlined-basic" label="Enter website address"
                  fullWidth
+
                  variant="outlined"/>
     </form>
   );
@@ -41,6 +42,6 @@ const SearchBar = () => {
 
     website.setWebsite(website_address)
   }
-}
+};
 
 export default SearchBar;

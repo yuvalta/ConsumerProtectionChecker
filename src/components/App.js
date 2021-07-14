@@ -8,6 +8,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import ProgressBar from 'react-customizable-progressbar'
 import {UserContext} from '../UserContext';
 import {makeStyles} from '@material-ui/core/styles';
+import {COLORS} from "../colors";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,8 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   content: {
-    marginTop: theme.spacing(3),
-    float: 'left'
+    margin: theme.spacing(5),
+    textAlign: 'right',
+    flexGrow: 1,
+    color: COLORS.black
   },
 
   center: {
@@ -31,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     pointerEvents: "none",
     opacity: "0.7"
+  },
+
+  button: {
+    backgroundColor: COLORS.dark_gray,
+    color: COLORS.dirty_white,
+    borderRadius: '50px'
   }
 }));
 
@@ -44,9 +54,19 @@ const App = () => {
     return (
       // <div className={!openToast || statusToast === 'error' || statusToast === 'success' ? classes.root : classes.root_disabled}>
       <div className={classes.root}>
-        <SearchBar/>
-        <Button onClick={() => sendToServer(website)} variant="contained" color="primary"
-                className={classes.content}>
+        <Typography variant="h6" className={classes.content}>
+          לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.
+          קלאצי הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף.
+          זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.
+        </Typography>
+
+        <SearchBar style={{
+          width: '75%',
+          height: '75%',
+        }}/>
+        <Button onClick={() => sendToServer(website)} variant="contained"
+                style={{borderRadius: '50px'}}
+                className={classes.button}>
           תבדקו לי
         </Button>
       </div>
@@ -58,7 +78,6 @@ const App = () => {
     <div>
       <div>
         <Header/>
-
         <div>
           {!openToast || statusToast === 'error' || statusToast === 'success'
             ?
@@ -73,13 +92,10 @@ const App = () => {
               initialAnimation
               initialAnimationDelay={500}
               strokeWidth={28}
-              strokeColor="#ffce54"
+              strokeColor={COLORS.green}
               trackStrokeWidth={14}
               trackStrokeLinecap="butt"
             />
-            // <CircularProgress className={classes.center}
-            //                   variant={progress === 100 || progress === 0 ? "indeterminate" : "determinate"}
-            //                   value={progress}/>
           }
         </div>
 
