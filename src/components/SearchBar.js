@@ -2,23 +2,25 @@ import React, {useState, useContext} from "react";
 import TextField from '@material-ui/core/TextField';
 import {UserContext} from '../UserContext';
 import useSendToServer from "../hooks/useSendToServer";
+import useStyles from "../hooks/useStyles";
+import {COLORS} from "../colors";
 
 const MAX_LENGTH_WEBSITE_URL = 500;
 
 const SearchBar = () => {
+  const classes = useStyles();
   const website = useContext(UserContext);
   const [sendToServer] = useSendToServer()
 
   const [error, setError] = useState("");
 
   return (
-    <form noValidate autoComplete="off" onSubmit={onSubmit}>
+    <form noValidate autoComplete="off" onSubmit={onSubmit} className={classes.searchbar}>
       <TextField onChange={(event) => validateWebsiteValue(event)}
                  error={error !== ""}
                  helperText={error !== "" ? error : ' '}
                  id="outlined-basic" label="Enter website address"
                  fullWidth
-
                  variant="outlined"/>
     </form>
   );

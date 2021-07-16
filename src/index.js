@@ -5,6 +5,6 @@ import {UserProvider} from "./UserContext"
 
 ReactDOM.render(
   <UserProvider>
-    <App/>
+    <App dir="rtl"/>
   </UserProvider>,
   document.querySelector("#root"));

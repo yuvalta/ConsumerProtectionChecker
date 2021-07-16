@@ -1,21 +1,9 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {COLORS} from "../colors";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    direction: 'rtl',
-    background: COLORS.gray
-  },
-  title: {
-    flexGrow: 1,
-    color: COLORS.dirty_white
-  },
-}));
+import Button from "@material-ui/core/Button";
+import useStyles from '../hooks/useStyles';
 
 const Header = () => {
   const classes = useStyles();
@@ -23,9 +11,20 @@ const Header = () => {
   return (
     <AppBar position="static" className={classes.root}>
       <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-          בדיקת אתרים
-        </Typography>
+
+
+        <Button variant='outlined' className={classes.simple_button}>
+          <Typography className={classes.button_dark_text}>
+            כניסה
+          </Typography>
+        </Button>
+
+        <Button className={classes.button_red_gradient}>
+          <Typography className={classes.button_light_text}>
+            הרשמה
+          </Typography>
+        </Button>
+
       </Toolbar>
     </AppBar>
   );
