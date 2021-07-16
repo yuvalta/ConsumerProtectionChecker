@@ -10,7 +10,7 @@ import useStyles from '../hooks/useStyles';
 import {COLORS} from "../colors";
 import Typography from "@material-ui/core/Typography";
 import {isMobile} from 'react-device-detect';
-import mainImage from '../assets/main_image.jpg'
+import mainImage from '../assets/main_image_no_background.png'
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -36,7 +36,7 @@ const App = () => {
       <div className={classes.main_content}>
         <div className={classes.side_by_side}>
 
-          <img src={mainImage} width='50%' height='50%'/>
+          <img src={mainImage} width='35%' height='35%'/>
 
           <div>
             <Typography variant="h3" className={classes.text}>
@@ -49,6 +49,7 @@ const App = () => {
               <br/>
               מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
               ומגלים ליקויים אפשריים באתר
+              <br/>
             </Typography>
             
             {isMobile ? null : searchBarDiv()}
