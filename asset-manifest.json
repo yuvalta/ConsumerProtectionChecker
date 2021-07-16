@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/ConsumerProtectionChecker/static/js/main.56d6bafa.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.56d6bafa.chunk.js.map",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.5f28a499.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.5f28a499.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
     "static/js/2.60bdbf4a.chunk.js": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js",
     "static/js/2.60bdbf4a.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
     "static/js/2.60bdbf4a.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js.LICENSE.txt",
-    "static/media/main_image.d396fce1.jpg": "/ConsumerProtectionChecker/static/media/main_image.d396fce1.jpg"
+    "static/media/main_image_no_background.796facae.png": "/ConsumerProtectionChecker/static/media/main_image_no_background.796facae.png"
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
     "static/js/2.60bdbf4a.chunk.js",
-    "static/js/main.56d6bafa.chunk.js"
+    "static/js/main.5f28a499.chunk.js"
   ]
 }
