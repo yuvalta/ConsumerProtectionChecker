@@ -1,11 +1,16 @@
 import {makeStyles} from "@material-ui/core/styles";
 import {COLORS} from "../colors";
-import useSendToServer from "./useSendToServer";
 
 const useStyles = makeStyles((theme) => ({
   main_content: {
     margin: theme.spacing(8),
     flexGrow: 1
+  },
+
+  side_by_side: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
   },
 
   text: {
@@ -41,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button_blue_gradient: {
-    margin: theme.spacing(0.5),
+    margin: theme.spacing(2),
     variant: 'contained',
     background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
     border: 0,

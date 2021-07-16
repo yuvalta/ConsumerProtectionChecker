@@ -9,6 +9,8 @@ import {UserContext} from '../UserContext';
 import useStyles from '../hooks/useStyles';
 import {COLORS} from "../colors";
 import Typography from "@material-ui/core/Typography";
+import {isMobile} from 'react-device-detect';
+import mainImage from '../assets/main_image.jpg'
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -16,28 +18,43 @@ const App = () => {
 
   const classes = useStyles();
 
-  const getMainBody = () => {
+  const searchBarDiv = () => {
     return (
-      <div className={classes.main_content}>
-
-        <Typography variant="h3" className={classes.text}>
-          האתר היחידי שדואג לאתר שלך
-        </Typography>
-
-        <Typography variant="h6" className={classes.text}>
-          מה עושים?
-          <br/>
-          מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,<br/>
-          ומגלים ליקויים אפשריים באתר
-        </Typography>
-
+      <div>
         <SearchBar/>
-
         <Button onClick={() => sendToServer(website)} className={classes.button_blue_gradient}>
           <Typography className={classes.button_light_text}>
             תבדקו לי
           </Typography>
         </Button>
+      </div>
+    );
+  };
+
+  const getMainBody = () => {
+    return (
+      <div className={classes.main_content}>
+        <div className={classes.side_by_side}>
+
+          <img src={mainImage} width='50%' height='50%'/>
+
+          <div>
+            <Typography variant="h3" className={classes.text}>
+              האתר היחידי שדואג לאתר שלך
+            </Typography>
+
+            <Typography variant="h6" className={classes.text}>
+              מה עושים?
+              <br/>
+              <br/>
+              מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
+              ומגלים ליקויים אפשריים באתר
+            </Typography>
+            
+            {isMobile ? null : searchBarDiv()}
+          </div>
+        </div>
+        {isMobile ? searchBarDiv() : null}
       </div>
     );
   };
@@ -54,7 +71,7 @@ const App = () => {
             :
             <ProgressBar
               className={classes.center}
-              radius={250}
+              radius={isMobile ? 150 : 250}
               progress={progress}
               cut={120}
               rotate={-210}
