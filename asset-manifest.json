@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.js": "/ConsumerProtectionChecker/static/js/main.5b3a2169.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.5b3a2169.chunk.js.map",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.c1fd994a.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.c1fd994a.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
     "static/js/2.60bdbf4a.chunk.js": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js",
     "static/js/2.60bdbf4a.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
     "static/js/2.60bdbf4a.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.60bdbf4a.chunk.js.LICENSE.txt",
-    "static/media/main_image_no_background.796facae.png": "/ConsumerProtectionChecker/static/media/main_image_no_background.796facae.png"
+    "static/media/background.2c4ca7a7.png": "/ConsumerProtectionChecker/static/media/background.2c4ca7a7.png",
+    "static/media/lighthouse.96933509.png": "/ConsumerProtectionChecker/static/media/lighthouse.96933509.png",
+    "static/media/website_man_image.7b901eed.png": "/ConsumerProtectionChecker/static/media/website_man_image.7b901eed.png"
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
     "static/js/2.60bdbf4a.chunk.js",
-    "static/js/main.5b3a2169.chunk.js"
+    "static/js/main.c1fd994a.chunk.js"
   ]
 }
