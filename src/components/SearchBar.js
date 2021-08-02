@@ -15,7 +15,7 @@ const SearchBar = () => {
   const [error, setError] = useState("");
 
   return (
-    <form noValidate autoComplete="off" onSubmit={onSubmit} className={classes.searchbar}>
+    <form noValidate autoComplete="off" onSubmit={onSubmit} >
       <TextField onChange={(event) => validateWebsiteValue(event)}
                  error={error !== ""}
                  helperText={error !== "" ? error : ' '}

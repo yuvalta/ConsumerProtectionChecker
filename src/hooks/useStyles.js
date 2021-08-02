@@ -7,6 +7,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1
   },
 
+  main_content_margin_left_right: {
+    marginLeft: theme.spacing(8),
+    marginRight: theme.spacing(-1),
+    flexGrow: 1
+  },
+
   side_by_side: {
     alignItems: 'center',
     display: 'flex',
@@ -15,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
   text: {
     direction: 'rtl',
-    fontFamily: '"Helvetica Neue"',
+    fontFamily: 'Ariel',
     margin: theme.spacing(2),
     textAlign: 'right',
     flexGrow: 1,
@@ -34,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button_red_gradient: {
-    margin: theme.spacing(0.5),
+    margin: theme.spacing(2),
     variant: 'contained',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     border: 0,
@@ -58,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   simple_button: {
-    margin: theme.spacing(0.5),
+    margin: theme.spacing(2),
     size: 'medium',
     borderRadius: '50px',
     padding: '0 30px',
@@ -66,6 +72,15 @@ const useStyles = makeStyles((theme) => ({
   },
 
   root: {
+    background: 'transparent',
+    flexGrow: 1,
+    direction: 'rtl',
+    boxShadow: 'none'
+  },
+
+  buttons_header: {
+    paddingTop: theme.spacing(2),
+    alignItems: 'center',
     background: 'transparent',
     flexGrow: 1,
     direction: 'rtl',
@@ -81,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
   searchbar: {
     flexGrow: 1,
     margin: theme.spacing(2),
+    borderRadius: 20 ,
   },
 
   bottomToast: {
@@ -88,9 +104,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button_dark_text: {
-    variant: 'h6',
+    variant: 'h3',
     flexGrow: 1,
-    color: COLORS.dark_gray
+    color: COLORS.black
   },
 
   button_light_text: {

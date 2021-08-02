@@ -10,7 +10,8 @@ import useStyles from '../hooks/useStyles';
 import {COLORS} from "../colors";
 import Typography from "@material-ui/core/Typography";
 import {isMobile} from 'react-device-detect';
-import mainImage from '../assets/main_image_no_background.png'
+import mainImage from '../assets/website_man_image.png'
+import background from "../assets/background.png";
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -22,7 +23,7 @@ const App = () => {
     return (
       <div>
         <SearchBar/>
-        <Button onClick={() => sendToServer(website)} className={classes.button_blue_gradient}>
+        <Button onClick={() => sendToServer(website)} className={classes.button_red_gradient}>
           <Typography className={classes.button_light_text}>
             תבדקו לי
           </Typography>
@@ -33,10 +34,8 @@ const App = () => {
 
   const getMainBody = () => {
     return (
-      <div className={classes.main_content}>
+      <div className={classes.main_content_margin_left_right}>
         <div className={classes.side_by_side}>
-
-          <img src={mainImage} width='35%' height='35%'/>
 
           <div>
             <Typography variant="h3" className={classes.text}>
@@ -51,9 +50,12 @@ const App = () => {
               ומגלים ליקויים אפשריים באתר
               <br/>
             </Typography>
-            
+
             {isMobile ? null : searchBarDiv()}
           </div>
+
+          <img src={mainImage} width='50%' height='50%'/>
+
         </div>
         {isMobile ? searchBarDiv() : null}
       </div>
@@ -62,7 +64,15 @@ const App = () => {
 
 
   return (
-    <div>
+    <div style={{
+      backgroundImage: `url(${background})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      width: '100vw',
+      height: '100vh',
+      marginTop: '-6px'
+    }}>
       <div>
         <Header/>
         <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -89,8 +99,6 @@ const App = () => {
         <BottomToast/>
 
       </div>
-
-
     </div>
   );
 };
