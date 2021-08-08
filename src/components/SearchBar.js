@@ -3,7 +3,6 @@ import TextField from '@material-ui/core/TextField';
 import {UserContext} from '../UserContext';
 import useSendToServer from "../hooks/useSendToServer";
 import useStyles from "../hooks/useStyles";
-import {COLORS} from "../colors";
 
 const MAX_LENGTH_WEBSITE_URL = 500;
 
@@ -15,7 +14,7 @@ const SearchBar = () => {
   const [error, setError] = useState("");
 
   return (
-    <form noValidate autoComplete="off" onSubmit={onSubmit} >
+    <form style={{width: '65vh', boxShadow: '5px rgba(126, 125, 124, .3)',}} noValidate autoComplete="off" onSubmit={onSubmit} >
       <TextField onChange={(event) => validateWebsiteValue(event)}
                  error={error !== ""}
                  helperText={error !== "" ? error : ' '}

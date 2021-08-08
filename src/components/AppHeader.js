@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import useStyles from '../hooks/useStyles';
 import logo from "../assets/lighthouse.png";
 
-const Header = () => {
+const AppHeader = () => {
   const classes = useStyles();
 
   return (
@@ -15,26 +15,26 @@ const Header = () => {
       <Toolbar>
         {/*<img src={logo} width='10%' height='10%'/>*/}
 
-        <Button variant='outlined' className={classes.simple_button}>
-          <Typography className={classes.button_dark_text}>
+        <Button variant='text' className={classes.simple_button}>
+          <h3 className={classes.button_dark_text}>
             כניסה
-          </Typography>
+          </h3>
         </Button>
 
-        <Button variant='outlined' className={classes.simple_button}>
-          <Typography className={classes.button_dark_text}>
+        <Button variant='text' className={classes.simple_button}>
+          <h3 className={classes.button_dark_text}>
             הרשמה
-          </Typography>
+          </h3>
         </Button>
 
-        <Button variant='outlined' className={classes.simple_button}>
-          <Typography className={classes.button_dark_text}>
+        <Button variant='text' className={classes.simple_button}>
+          <h3 className={classes.button_dark_text}>
             מי אנחנו
-          </Typography>
+          </h3>
         </Button>
       </Toolbar>
     </AppBar>
   );
 }
 
-export default Header;
+export default AppHeader;

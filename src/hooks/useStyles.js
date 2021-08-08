@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 
   main_content_margin_left_right: {
     marginLeft: theme.spacing(8),
-    marginRight: theme.spacing(-1),
+    marginRight: theme.spacing(1),
     flexGrow: 1
   },
 
@@ -17,15 +17,25 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignContent: 'space-around',
   },
 
-  text: {
+  text_h1: {
     direction: 'rtl',
-    fontFamily: 'Ariel',
-    margin: theme.spacing(2),
     textAlign: 'right',
     flexGrow: 1,
-    color: COLORS.black
+    fontFamily: 'Rubik'
+  },
+
+  text_h2: {
+    direction: 'rtl',
+
+    textAlign: 'right',
+    flexGrow: 1,
+    color: COLORS.black,
+    fontFamily: 'Rubik'
   },
 
   center: {
@@ -40,12 +50,24 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button_red_gradient: {
-    margin: theme.spacing(2),
+    marginRight: theme.spacing(2),
     variant: 'contained',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     border: 0,
     borderRadius: '50px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  },
+
+  button_gray: {
+    marginRight: theme.spacing(2),
+    variant: 'contained',
+    background: '#423f3c',
+    border: 0,
+    borderRadius: '50px',
+    boxShadow: '5px 5px 5px 5px rgba(126, 125, 124, .3)',
     color: 'white',
     height: 48,
     padding: '0 30px',
@@ -96,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
   searchbar: {
     flexGrow: 1,
     margin: theme.spacing(2),
-    borderRadius: 20 ,
+    borderRadius: 20,
   },
 
   bottomToast: {
@@ -104,7 +126,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   button_dark_text: {
-    variant: 'h3',
     flexGrow: 1,
     color: COLORS.black
   },

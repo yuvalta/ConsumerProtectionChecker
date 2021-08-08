@@ -1,5 +1,5 @@
 import React, {useState, useContext, useEffect} from "react";
-import Header from "./Header";
+import AppHeader from "./AppHeader";
 import SearchBar from "./SearchBar";
 import BottomToast from './BottomToast';
 import useSendToServer from '../hooks/useSendToServer';
@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import {isMobile} from 'react-device-detect';
 import mainImage from '../assets/website_man_image.png'
 import background from "../assets/background.png";
+import {Label, Header} from "semantic-ui-react";
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -21,35 +22,35 @@ const App = () => {
 
   const searchBarDiv = () => {
     return (
-      <div>
-        <SearchBar/>
-        <Button onClick={() => sendToServer(website)} className={classes.button_red_gradient}>
+      <div className={classes.side_by_side}>
+
+        <Button onClick={() => sendToServer(website)} className={classes.button_gray}>
           <Typography className={classes.button_light_text}>
             תבדקו לי
           </Typography>
         </Button>
+
+        <SearchBar/>
+
       </div>
     );
   };
 
   const getMainBody = () => {
     return (
-      <div className={classes.main_content_margin_left_right}>
+      <div>
         <div className={classes.side_by_side}>
-
           <div>
-            <Typography variant="h3" className={classes.text}>
-              האתר היחידי שדואג לאתר שלך
-            </Typography>
-
-            <Typography variant="h6" className={classes.text}>
-              מה עושים?
-              <br/>
-              <br/>
-              מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
-              ומגלים ליקויים אפשריים באתר
-              <br/>
-            </Typography>
+            <div>
+              <p className={classes.text_h1} style={{fontSize: '3.5vw', color: COLORS.black,}}><b>האתר היחידי שדואג לאתר שלך</b></p>
+              <p className={classes.text_h1} style={{fontSize: '1.75vw', color: COLORS.dark_gray,}}>מה עושים?
+                <br/>
+                <br/>
+                מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
+                ומגלים ליקויים אפשריים באתר
+                <br/>
+              </p>
+            </div>
 
             {isMobile ? null : searchBarDiv()}
           </div>
@@ -57,9 +58,12 @@ const App = () => {
           <img src={mainImage} width='50%' height='50%'/>
 
         </div>
-        {isMobile ? searchBarDiv() : null}
+        {
+          isMobile ? searchBarDiv() : null
+        }
       </div>
-    );
+    )
+      ;
   };
 
 
@@ -69,12 +73,12 @@ const App = () => {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      width: '100vw',
+      width: '96vw',
       height: '100vh',
-      marginTop: '-6px'
-    }}>
+      marginTop: '-9px'
+    }} className={classes.main_content_margin_left_right}>
       <div>
-        <Header/>
+        <AppHeader/>
         <div style={{display: 'flex', justifyContent: 'center'}}>
           {!openToast || statusToast === 'error' || statusToast === 'success'
             ?
