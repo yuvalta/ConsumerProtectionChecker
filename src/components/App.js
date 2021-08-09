@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import {isMobile} from 'react-device-detect';
 import mainImage from '../assets/website_man_image.png'
 import background from "../assets/background.png";
-import {Label, Header} from "semantic-ui-react";
+import '../stylesheet.css'
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -22,13 +22,12 @@ const App = () => {
 
   const searchBarDiv = () => {
     return (
-      <div className={classes.side_by_side}>
+      // <div className={classes.side_by_side}>
+      <div className='container'>
 
-        <Button onClick={() => sendToServer(website)} className={classes.button_gray}>
-          <Typography className={classes.button_light_text}>
-            תבדקו לי
-          </Typography>
-        </Button>
+        <button className='button' onClick={() => sendToServer(website)}>
+          תבדקו לי
+        </button>
 
         <SearchBar/>
 
@@ -39,11 +38,11 @@ const App = () => {
   const getMainBody = () => {
     return (
       <div>
-        <div className={classes.side_by_side}>
-          <div>
+        <div className='main_content_side_by_side_container'>
+          <div className='content'>
             <div>
-              <p className={classes.text_h1} style={{fontSize: '3.5vw', color: COLORS.black,}}><b>האתר היחידי שדואג לאתר שלך</b></p>
-              <p className={classes.text_h1} style={{fontSize: '1.75vw', color: COLORS.dark_gray,}}>מה עושים?
+              <h1>האתר היחידי שדואג לאתר שלך</h1>
+              <p>מה עושים?
                 <br/>
                 <br/>
                 מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
@@ -55,7 +54,7 @@ const App = () => {
             {isMobile ? null : searchBarDiv()}
           </div>
 
-          <img src={mainImage} width='50%' height='50%'/>
+          <img className='main_image' src={mainImage} width='50%' height='50%'/>
 
         </div>
         {
@@ -73,19 +72,19 @@ const App = () => {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      width: '96vw',
+      width: '100vw',
       height: '100vh',
       marginTop: '-9px'
-    }} className={classes.main_content_margin_left_right}>
+    }}>
       <div>
         <AppHeader/>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div>
           {!openToast || statusToast === 'error' || statusToast === 'success'
             ?
             getMainBody()
             :
             <ProgressBar
-              className={classes.center}
+              className='progressbar'
               radius={isMobile ? 150 : 250}
               progress={progress}
               cut={120}

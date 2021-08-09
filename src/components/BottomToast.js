@@ -15,7 +15,7 @@ const BottomToast = () => {
   return (
     <Snackbar open={openToast}
               onClose={statusToast === 'error' || statusToast === 'success' ? handleClose : null}>
-      <Alert className={classes.bottomToast}  severity={statusToast} icon={false}>
+      <Alert className='bottom_toast'  severity={statusToast} icon={false}>
         {messageToast}
       </Alert>
     </Snackbar>

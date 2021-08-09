@@ -7,4 +7,5 @@ export const COLORS = {
   black: '#1C201D',
   green: '#71916D',
   brown: '#8A745D',
+  button_gray: '#423f3c',
 }
