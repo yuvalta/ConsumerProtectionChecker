@@ -3,7 +3,7 @@ h1 {
     text-align: right;
     flex-grow: 1;
     font-size: 5vh;
-    font-family: Rubik;
+    font-family: Rubik, Ariel;
 }
 
 p {
@@ -13,7 +13,7 @@ p {
     font-size: 3vh;
     color: #000000;
     opacity: 70%;
-    font-family: Rubik;
+    font-family: Rubik, Ariel;
 }
 
 .progressbar {
@@ -64,7 +64,7 @@ p {
     /*noinspection CssInvalidFunction*/
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     font-size: 2vh;
-    font-family: Rubik;
+    font-family: Rubik, Ariel;
 }
 
 .button {
@@ -79,12 +79,81 @@ p {
     border-width: 0px;
     /*noinspection CssInvalidFunction*/
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    font-family: Rubik;
+    font-family: Rubik, Ariel;
     font-size: 2vh;
+}
+
+.button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button:active {
+    background-color: #357837;
+    color: white;
+}
+
+.appbar-container {
+    height: 10vh;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.logo {
+    align-self: flex-start;
+    height: 100%;
+}
+
+.appbar-buttons-container {
+    height: 10vh;
+    padding-top: 1%;
+    padding-left: 30%;
+    padding-right: 35%;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-grow: 3;
+}
+
+.appbar-button {
+    flex: 1;
+    margin-right: 2%;
+    background-color: transparent;
+    border-radius: 10px;
+    color: black;
+    opacity: 70%;
+    border-width: 0px;
+    /*noinspection CssInvalidFunction*/
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    font-family: Rubik, Ariel;
+    font-size: 2vh;
+    height: 50%;
+}
+
+.appbar-button:hover {
+    background-color: #555555;
+    color: white;
+}
+
+.appbar-button:active {
+    background-color: #383838;
+    color: white;
 }
 
 .bottom_toast {
     direction: rtl;
+}
+
+.buttons-header {
+    padding-top: 2%;
+    align-items: center;
+    background-color: red;
+    direction: rtl;
+    box-shadow: none;
 }
 
 @font-face {
