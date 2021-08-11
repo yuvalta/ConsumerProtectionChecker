@@ -18,8 +18,6 @@ const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
   const [sendToServer] = useSendToServer()
 
-  const classes = useStyles();
-
   const searchBarDiv = () => {
     return (
       // <div className={classes.side_by_side}>
@@ -51,15 +49,15 @@ const App = () => {
                 <br/>
               </p>
             </div>
-
-            {isMobile ? null : searchBarDiv()}
+            {searchBarDiv()}
+            {/*{isMobile ? null : searchBarDiv()}*/}
           </div>
 
           <img className='main_image' src={mainImage} width='50%' height='50%'/>
 
         </div>
         {
-          isMobile ? searchBarDiv() : null
+          // isMobile ? searchBarDiv() : null
         }
       </div>
     );
