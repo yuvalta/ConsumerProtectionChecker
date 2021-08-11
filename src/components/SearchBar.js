@@ -4,6 +4,7 @@ import {UserContext} from '../UserContext';
 import useSendToServer from "../hooks/useSendToServer";
 import useStyles from "../hooks/useStyles";
 import '../stylesheet.css'
+import { useHistory } from "react-router-dom";
 
 const MAX_LENGTH_WEBSITE_URL = 500;
 
@@ -11,19 +12,11 @@ const SearchBar = () => {
   const classes = useStyles();
   const website = useContext(UserContext);
   const [sendToServer] = useSendToServer()
+  const history = useHistory()
 
   const [error, setError] = useState("");
 
   return (
-    // <form noValidate autoComplete="off" onSubmit={onSubmit}>
-    //   <TextField onChange={(event) => validateWebsiteValue(event)}
-    //              error={error !== ""}
-    //              helperText={error !== "" ? error : ' '}
-    //              id="outlined-basic" label="Enter website address"
-    //              fullWidth
-    //              variant="outlined"/>
-    // </form>
-
     <form className='searchbar' noValidate autoComplete="off" onSubmit={onSubmit}>
       <input className='input' onChange={(event) => validateWebsiteValue(event)}
              type='text' id="outlined-basic" name="Enter website address"/>
@@ -32,14 +25,13 @@ const SearchBar = () => {
 
   function onSubmit(event) {
     event.preventDefault()
-
+    history.push('/testResult')
     sendToServer(website.website)
   };
 
 
   function validateWebsiteValue(event) {
     const website_address = event.target.value;
-
     if (website_address.length > MAX_LENGTH_WEBSITE_URL) {
       setError("קישור ארוך מידי")
       return

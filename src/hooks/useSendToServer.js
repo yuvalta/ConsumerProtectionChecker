@@ -10,8 +10,6 @@ const useSendToServer = () => {
   const {setOpenToast, setStatusToast, setMessageToast, setProgress} = useContext(UserContext);
 
   useEffect(() => {
-
-
       sio.on('connect', () => {
         // debugger
         console.log('connected')
@@ -55,7 +53,6 @@ const useSendToServer = () => {
   };
 
   return [sendToServer];
-
 }
 
 export default useSendToServer;

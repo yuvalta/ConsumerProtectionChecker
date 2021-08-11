@@ -4,28 +4,27 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from "@material-ui/core/Button";
 import useStyles from '../hooks/useStyles';
 import logo from "../assets/lighthouse.png";
+import {Link} from "react-router-dom";
+import About from "./About";
 
 const AppHeader = () => {
-  const classes = useStyles();
-
   return (
-
     <div className='appbar-container'>
 
       <img src={logo} className='logo'/>
 
       <div className='appbar-buttons-container'>
-        <button className='appbar-button'>
-          כניסה
-        </button>
 
-        <button className='appbar-button'>
-          הרשמה
-        </button>
-
-        <button className='appbar-button'>
-          מי אנחנו
-        </button>
+          <Link className='appbar-link' to="/">
+            <button className='appbar-button'>
+              דף הבית
+            </button>
+          </Link>
+          <Link className='appbar-link' to="/About">
+            <button className='appbar-button'>
+              מי אנחנו
+            </button>
+          </Link>
       </div>
     </div>
   );

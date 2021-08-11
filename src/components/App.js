@@ -3,16 +3,16 @@ import AppHeader from "./AppHeader";
 import SearchBar from "./SearchBar";
 import BottomToast from './BottomToast';
 import useSendToServer from '../hooks/useSendToServer';
-import Button from '@material-ui/core/Button';
-import ProgressBar from 'react-customizable-progressbar'
 import {UserContext} from '../UserContext';
 import useStyles from '../hooks/useStyles';
 import {COLORS} from "../colors";
-import Typography from "@material-ui/core/Typography";
 import {isMobile} from 'react-device-detect';
 import mainImage from '../assets/website_man_image.png'
 import background from "../assets/background.png";
 import '../stylesheet.css'
+import {Router, Route, Switch, BrowserRouter, Link} from "react-router-dom";
+import About from "./About";
+import TestResult from "./TestResult";
 
 const App = () => {
   const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
@@ -25,12 +25,13 @@ const App = () => {
       // <div className={classes.side_by_side}>
       <div className='container'>
 
-        <button className='button' onClick={() => sendToServer(website)}>
-          תבדקו לי
-        </button>
+        <Link className='button-link' to="/testResult">
+          <button className='button' onClick={() => sendToServer(website)}>
+            תבדקו לי
+          </button>
+        </Link>
 
         <SearchBar/>
-
       </div>
     );
   };
@@ -61,10 +62,8 @@ const App = () => {
           isMobile ? searchBarDiv() : null
         }
       </div>
-    )
-      ;
+    );
   };
-
 
   return (
     <div style={{
@@ -77,31 +76,28 @@ const App = () => {
       marginTop: '-9px'
     }}>
       <div>
-        <AppHeader/>
-        <div>
-          {!openToast || statusToast === 'error' || statusToast === 'success'
-            ?
-            getMainBody()
-            :
-            <ProgressBar
-              className='progressbar'
-              radius={isMobile ? 150 : 250}
-              progress={progress}
-              cut={120}
-              rotate={-210}
-              initialAnimation
-              initialAnimationDelay={500}
-              strokeWidth={28}
-              strokeColor={COLORS.green}
-              trackStrokeWidth={14}
-              trackStrokeLinecap="butt"
-            />
-          }
-        </div>
+        <BrowserRouter>
+          <AppHeader/>
 
-        <BottomToast/>
+          <Switch>
+            <Route path="/testResult">
+              <TestResult/>
+            </Route>
 
+            <Route path="/about">
+              <About/>
+            </Route>
+            <Route path="/">
+
+              <div>
+                {getMainBody()}
+              </div>
+
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </div>
+
     </div>
   );
 };

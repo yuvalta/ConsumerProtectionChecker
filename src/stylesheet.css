@@ -67,12 +67,16 @@ p {
     font-family: Rubik, Ariel;
 }
 
-.button {
-    padding: 0.5%;
+.button-link {
     width: 100%;
     height: 100%;
     flex: 1;
-    margin-right: 2%;
+}
+
+
+.button {
+    width: 100%;
+    height: 100%;
     background-color: #555555;
     border-radius: 10px;
     color: white;
@@ -112,11 +116,16 @@ p {
     height: 10vh;
     padding-top: 1%;
     padding-left: 30%;
-    padding-right: 35%;
+    padding-right: 30%;
     display: flex;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: space-evenly;
     flex-grow: 3;
+}
+
+.appbar-link {
+    flex: 1;
+    margin-right: 2%;
 }
 
 .appbar-button {
@@ -132,6 +141,7 @@ p {
     font-family: Rubik, Ariel;
     font-size: 2vh;
     height: 50%;
+    width: 100%;
 }
 
 .appbar-button:hover {
