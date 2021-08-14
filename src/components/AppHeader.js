@@ -4,14 +4,17 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from "@material-ui/core/Button";
 import useStyles from '../hooks/useStyles';
 import logo from "../assets/lighthouse.png";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import About from "./About";
 
 const AppHeader = () => {
+  const history = useHistory()
+
+
   return (
     <div className='appbar-container'>
 
-      <img src={logo} className='logo'/>
+      <img src={logo} className='logo' onClick={() => {history.replace('/')}}/>
 
       <div className='appbar-buttons-container'>
 

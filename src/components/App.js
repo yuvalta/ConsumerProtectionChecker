@@ -1,26 +1,29 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useContext, useEffect} from "react";
 import AppHeader from "./AppHeader";
 import SearchBar from "./SearchBar";
-import BottomToast from './BottomToast';
-import useSendToServer from '../hooks/useSendToServer';
+import useSendToServer, {sio} from '../hooks/useSendToServer';
 import {UserContext} from '../UserContext';
-import useStyles from '../hooks/useStyles';
-import {COLORS} from "../colors";
-import {isMobile} from 'react-device-detect';
 import mainImage from '../assets/website_man_image.png'
 import background from "../assets/background.png";
 import '../stylesheet.css'
-import {Router, Route, Switch, BrowserRouter, Link} from "react-router-dom";
+import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 import About from "./About";
 import TestResult from "./TestResult";
 
 const App = () => {
-  const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
+  const {website} = useContext(UserContext);
   const [sendToServer] = useSendToServer()
+
+  useEffect(() => {
+      sio.on('connect', () => {
+        // debugger
+        console.log('connected')
+      });
+    }, []
+  )
 
   const searchBarDiv = () => {
     return (
-      // <div className={classes.side_by_side}>
       <div className='container'>
 
         <Link className='button-link' to="/testResult">
