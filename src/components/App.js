@@ -15,10 +15,8 @@ const App = () => {
   const [sendToServer] = useSendToServer()
 
   useEffect(() => {
-      sio.on('connect', () => {
-        // debugger
-        console.log('connected')
-      });
+    console.log('abort')
+      sio.emit('abort')
     }, []
   )
 

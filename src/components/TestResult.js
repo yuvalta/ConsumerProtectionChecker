@@ -4,16 +4,33 @@ import {isMobile} from 'react-device-detect';
 import {UserContext} from "../UserContext";
 import {COLORS} from "../colors";
 import BottomToast from "./BottomToast";
+import {Link} from "react-router-dom";
+import SearchBar from "./SearchBar";
+import GetUserData from "./GetUserData";
 
 const TestResult = () => {
-  const {website, openToast, statusToast, progress, setProgress} = useContext(UserContext);
+  const {website, openToast, statusToast, progress, messageToast} = useContext(UserContext);
+
+  const showResults = () => {
+    return (
+      <div>
+        <h1>
+          הבדיקה הסתיימה!
+        </h1>
+        <p>
+          {messageToast}
+        </p>
+        <GetUserData/>
+      </div>
+    );
+  };
 
   return (
     <div>
       <div className='test_result_progressbar_container'>
         {!openToast || statusToast === 'error' || statusToast === 'success'
           ?
-          <div> results!!!</div>
+          <div> {showResults()} </div>
           :
           <div>
             <ProgressBar

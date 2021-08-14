@@ -11,7 +11,6 @@ const useSendToServer = () => {
 
   useEffect(() => {
       sio.on('connect', () => {
-        // debugger
         console.log('connected')
       });
 
@@ -19,9 +18,9 @@ const useSendToServer = () => {
         console.log('disconnected')
       });
 
-      sio.on('error', () => {
+      sio.on('error', (error_data) => {
         console.log('error!')
-        setMessageToast("error");
+        setMessageToast(error_data);
         setStatusToast('error');
       });
 
@@ -29,9 +28,10 @@ const useSendToServer = () => {
         console.log(score)
 
         setProgress(0)
-        setMessageToast(`סריקה הסתיימה בהצלחה - ליקויים בשווי של ${score}`);
-        setStatusToast('success');
-
+        // setMessageToast(`סריקה הסתיימה בהצלחה - ליקויים בשווי של ${score}`);
+        setOpenToast(false)
+        setMessageToast(` ליקויים בשווי של ${score}`);
+        // setStatusToast('success');
       });
 
       sio.on('status_update', (data) => {

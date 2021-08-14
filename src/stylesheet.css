@@ -46,6 +46,7 @@ p {
 
 .main_image {
     flex: 1;
+    flex-shrink: initial;
 }
 
 .container {
