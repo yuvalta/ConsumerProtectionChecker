@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 const MAX_LENGTH_WEBSITE_URL = 500;
 
 const SearchBar = () => {
-  const classes = useStyles();
   const website = useContext(UserContext);
   const [sendToServer] = useSendToServer()
   const history = useHistory()

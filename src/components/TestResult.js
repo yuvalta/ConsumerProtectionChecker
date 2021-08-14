@@ -4,23 +4,35 @@ import {isMobile} from 'react-device-detect';
 import {UserContext} from "../UserContext";
 import {COLORS} from "../colors";
 import BottomToast from "./BottomToast";
-import {Link} from "react-router-dom";
-import SearchBar from "./SearchBar";
+import {useHistory} from "react-router-dom";
 import GetUserData from "./GetUserData";
 
 const TestResult = () => {
-  const {website, openToast, statusToast, progress, messageToast} = useContext(UserContext);
+  const {openToast, statusToast, progress, messageToast, setSubmitDate, userEmail, userPhone, userFullName, submitDate
+  } = useContext(UserContext);
+
+  const history = useHistory()
 
   const showResults = () => {
     return (
-      <div>
+      <div className='user-form-container'>
         <h1>
           הבדיקה הסתיימה!
         </h1>
+
         <p>
           {messageToast}
         </p>
+
         <GetUserData/>
+
+        <button className='button' onClick={() => {
+          setSubmitDate((new Date()).getDate());
+          alert('נשלח!\n' + userFullName + " " + userPhone + " " + userEmail + " " + submitDate);
+          history.replace('/');
+        }}>
+          שלח\י
+        </button>
       </div>
     );
   };

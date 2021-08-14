@@ -9,7 +9,6 @@ function Alert(props) {
 }
 
 const BottomToast = () => {
-  const classes = useStyles();
   const {openToast, setOpenToast, statusToast, messageToast} = useContext(UserContext);
 
   return (
