@@ -6,9 +6,11 @@ import {COLORS} from "../colors";
 import BottomToast from "./BottomToast";
 import {useHistory} from "react-router-dom";
 import GetUserData from "./GetUserData";
+import {sio} from "../hooks/useSendToServer";
 
 const TestResult = () => {
-  const {openToast, statusToast, progress, messageToast, setSubmitDate, userEmail, userPhone, userFullName, submitDate
+  const {
+    openToast, statusToast, progress, messageToast, setSubmitDate, userEmail, userPhone, userFullName, submitDate
   } = useContext(UserContext);
 
   const history = useHistory()
@@ -26,16 +28,32 @@ const TestResult = () => {
 
         <GetUserData/>
 
-        <button className='button' onClick={() => {
-          setSubmitDate((new Date()).getDate());
-          alert('נשלח!\n' + userFullName + " " + userPhone + " " + userEmail + " " + submitDate);
-          history.replace('/');
-        }}>
-          שלח\י
-        </button>
+        <div className='send-form-button'>
+          <button className='button' onClick={() => {
+            setSubmitDate((new Date()).getDate());
+            alert('נשלח!\n' + userFullName + " " + userPhone + " " + userEmail + " " + submitDate);
+            sio.emit('user_form_data', {
+              'user_full_name': userFullName,
+              'user_phone': userPhone,
+              'user_email': userEmail
+            })
+            history.replace('/');
+          }}>
+            שלח\י
+          </button>
+        </div>
       </div>
     );
   };
+
+  const infinity_loadingbar = <div className="loadingio-spinner-dual-ring-4pm97gr5npk">
+    <div className="ldio-9o242xdhv0o">
+      <div></div>
+      <div>
+        <div></div>
+      </div>
+    </div>
+  </div>;
 
   return (
     <div>
@@ -45,19 +63,24 @@ const TestResult = () => {
           <div> {showResults()} </div>
           :
           <div>
-            <ProgressBar
-              className='progressbar'
-              radius={isMobile ? 150 : 250}
-              progress={progress}
-              cut={120}
-              rotate={-210}
-              initialAnimation
-              initialAnimationDelay={500}
-              strokeWidth={28}
-              strokeColor={COLORS.green}
-              trackStrokeWidth={14}
-              trackStrokeLinecap="butt"
-            />
+
+            {(messageToast === 'סריקה התחילה' || messageToast === 'מחשב...') ?
+              infinity_loadingbar
+              :
+              <ProgressBar
+                className='progressbar'
+                radius={isMobile ? 150 : 250}
+                progress={progress}
+                cut={120}
+                rotate={-210}
+                initialAnimation
+                initialAnimationDelay={500}
+                strokeWidth={28}
+                strokeColor={COLORS.green}
+                trackStrokeWidth={14}
+                trackStrokeLinecap="butt"
+              />
+            }
           </div>
         }
       </div>

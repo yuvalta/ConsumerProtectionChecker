@@ -54,7 +54,7 @@ const App = () => {
             {/*{isMobile ? null : searchBarDiv()}*/}
           </div>
 
-          <img className='main_image' src={mainImage} width='50%' height='50%'/>
+          <img className='main_image' src={mainImage} width='45%' height='45%'/>
 
         </div>
         {
