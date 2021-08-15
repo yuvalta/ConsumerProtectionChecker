@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ConsumerProtectionChecker/static/css/main.9a192fe9.chunk.css",
-    "main.js": "/ConsumerProtectionChecker/static/js/main.a7200b5a.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.a7200b5a.chunk.js.map",
+    "main.css": "/ConsumerProtectionChecker/static/css/main.f6f5dde0.chunk.css",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.f6eb0616.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.f6eb0616.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
     "static/js/2.c0d09218.chunk.js": "/ConsumerProtectionChecker/static/js/2.c0d09218.chunk.js",
     "static/js/2.c0d09218.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.c0d09218.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
-    "static/css/main.9a192fe9.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.9a192fe9.chunk.css.map",
+    "static/css/main.f6f5dde0.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.f6f5dde0.chunk.css.map",
     "static/js/2.c0d09218.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.c0d09218.chunk.js.LICENSE.txt",
     "static/media/stylesheet.css": "/ConsumerProtectionChecker/static/media/Rubik_300.3a8e5377.ttf",
     "static/media/background.2c4ca7a7.png": "/ConsumerProtectionChecker/static/media/background.2c4ca7a7.png",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
     "static/js/2.c0d09218.chunk.js",
-    "static/css/main.9a192fe9.chunk.css",
-    "static/js/main.a7200b5a.chunk.js"
+    "static/css/main.f6f5dde0.chunk.css",
+    "static/js/main.f6eb0616.chunk.js"
   ]
 }
