@@ -1,25 +1,29 @@
 {
   "files": {
-    "main.css": "/ConsumerProtectionChecker/static/css/main.f5cf645d.chunk.css",
-    "main.js": "/ConsumerProtectionChecker/static/js/main.e3a560ac.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.e3a560ac.chunk.js.map",
+    "main.css": "/ConsumerProtectionChecker/static/css/main.fd644df9.chunk.css",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.7a8460c0.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.7a8460c0.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
-    "static/js/2.679f7d98.chunk.js": "/ConsumerProtectionChecker/static/js/2.679f7d98.chunk.js",
-    "static/js/2.679f7d98.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.679f7d98.chunk.js.map",
+    "static/js/2.c17948ad.chunk.js": "/ConsumerProtectionChecker/static/js/2.c17948ad.chunk.js",
+    "static/js/2.c17948ad.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.c17948ad.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
-    "static/css/main.f5cf645d.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.f5cf645d.chunk.css.map",
-    "static/js/2.679f7d98.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.679f7d98.chunk.js.LICENSE.txt",
+    "static/css/main.fd644df9.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.fd644df9.chunk.css.map",
+    "static/js/2.c17948ad.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.c17948ad.chunk.js.LICENSE.txt",
     "static/media/stylesheet.css": "/ConsumerProtectionChecker/static/media/Rubik_300.3a8e5377.ttf",
-    "static/media/about_background.558598f9.png": "/ConsumerProtectionChecker/static/media/about_background.558598f9.png",
     "static/media/background.2c4ca7a7.png": "/ConsumerProtectionChecker/static/media/background.2c4ca7a7.png",
+    "static/media/background_gradient.43ed4131.png": "/ConsumerProtectionChecker/static/media/background_gradient.43ed4131.png",
+    "static/media/bottom_wave.6f858a90.png": "/ConsumerProtectionChecker/static/media/bottom_wave.6f858a90.png",
+    "static/media/daniel.35a9c90c.jpg": "/ConsumerProtectionChecker/static/media/daniel.35a9c90c.jpg",
+    "static/media/elliot.e908aca1.jpg": "/ConsumerProtectionChecker/static/media/elliot.e908aca1.jpg",
+    "static/media/helen.3e1104e3.jpg": "/ConsumerProtectionChecker/static/media/helen.3e1104e3.jpg",
     "static/media/lighthouse.96933509.png": "/ConsumerProtectionChecker/static/media/lighthouse.96933509.png",
     "static/media/website_man_image.7b901eed.png": "/ConsumerProtectionChecker/static/media/website_man_image.7b901eed.png"
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
-    "static/js/2.679f7d98.chunk.js",
-    "static/css/main.f5cf645d.chunk.css",
-    "static/js/main.e3a560ac.chunk.js"
+    "static/js/2.c17948ad.chunk.js",
+    "static/css/main.fd644df9.chunk.css",
+    "static/js/main.7a8460c0.chunk.js"
   ]
 }
