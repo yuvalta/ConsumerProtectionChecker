@@ -28,20 +28,6 @@ const TestResult = () => {
 
         <GetUserData/>
 
-        <div className='send-form-button'>
-          <button className='button' onClick={() => {
-            setSubmitDate((new Date()).getDate());
-            alert('נשלח!\n' + userFullName + " " + userPhone + " " + userEmail + " " + submitDate);
-            sio.emit('user_form_data', {
-              'user_full_name': userFullName,
-              'user_phone': userPhone,
-              'user_email': userEmail
-            })
-            history.replace('/');
-          }}>
-            שלח\י
-          </button>
-        </div>
       </div>
     );
   };
@@ -62,24 +48,25 @@ const TestResult = () => {
           ?
           <div> {showResults()} </div>
           :
-          <div>
+          <div className='progressbar'>
 
             {(messageToast === 'סריקה התחילה' || messageToast === 'מחשב...') ?
               infinity_loadingbar
               :
-              <ProgressBar
-                className='progressbar'
-                radius={isMobile ? 150 : 250}
-                progress={progress}
-                cut={120}
-                rotate={-210}
-                initialAnimation
-                initialAnimationDelay={500}
-                strokeWidth={28}
-                strokeColor={COLORS.green}
-                trackStrokeWidth={14}
-                trackStrokeLinecap="butt"
-              />
+              <div>
+                <ProgressBar
+                  // radius={isMobile ? 150 : 250}
+                  progress={progress}
+                  cut={120}
+                  rotate={-210}
+                  initialAnimation
+                  initialAnimationDelay={500}
+                  strokeWidth={28}
+                  strokeColor={COLORS.green}
+                  trackStrokeWidth={14}
+                  trackStrokeLinecap="butt"
+                />
+              </div>
             }
           </div>
         }

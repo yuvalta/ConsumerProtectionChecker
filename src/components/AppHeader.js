@@ -10,26 +10,24 @@ const AppHeader = () => {
     <div className='appbar-container'>
 
       <img src={logo} className='logo' onClick={() => {
-        history.replace('/home')
+        history.replace('/')
       }}/>
 
       <div className='appbar-buttons-container'>
 
-        <HashLink className='appbar-link' scroll={(el) => el.scrollIntoView({behavior: 'smooth'})}
-                  to={'/home#contact-us'}>
+        <HashLink smooth className='appbar-link' to={'/#contact-us'}>
           <button className='appbar-button'>
             📱 דברו איתנו
           </button>
         </HashLink>
 
-        <HashLink className='appbar-link' scroll={(el) => el.scrollIntoView({behavior: 'smooth'})}
-                  to={'/home#about-us-section'}>
+        <HashLink smooth className='appbar-link' to={'/#about-us-section'}>
           <button className='appbar-button'>
             מי אנחנו
           </button>
         </HashLink>
 
-        <Link className='appbar-link' to="/home">
+        <Link className='appbar-link' to="/">
           <button className='appbar-button'>
             דף הבית
           </button>
