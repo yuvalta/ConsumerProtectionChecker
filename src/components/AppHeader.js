@@ -17,7 +17,7 @@ const AppHeader = () => {
 
         <HashLink smooth className='appbar-link' to={'/#contact-us'}>
           <button className='appbar-button'>
-            📱 דברו איתנו
+            דברו איתנו
           </button>
         </HashLink>
 

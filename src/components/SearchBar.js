@@ -1,7 +1,7 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import TextField from '@material-ui/core/TextField';
 import {UserContext} from '../UserContext';
-import useSendToServer from "../hooks/useSendToServer";
+import useSendToServer, {sio} from "../hooks/useSendToServer";
 import useStyles from "../hooks/useStyles";
 import '../stylesheet.css'
 import { useHistory } from "react-router-dom";
@@ -14,6 +14,12 @@ const SearchBar = () => {
   const history = useHistory()
 
   const [error, setError] = useState("");
+
+  useEffect(() => {
+      console.log('abort')
+      sio.emit('abort')
+    }, []
+  )
 
   return (
     <form className='searchbar' noValidate autoComplete="off" onSubmit={onSubmit}>

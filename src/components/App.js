@@ -17,12 +17,6 @@ const App = () => {
   const {website} = useContext(UserContext);
   const [sendToServer] = useSendToServer()
 
-  useEffect(() => {
-      console.log('abort')
-      sio.emit('abort')
-    }, []
-  )
-
   const searchBarDiv = () => {
     return (
       <div className='container'>
@@ -51,18 +45,15 @@ const App = () => {
                 מכניסים את הכתובת של האתר מסחר שלכם ממש פה מתחת,
                 ומגלים ליקויים אפשריים באתר
                 <br/>
+                <br/>
               </p>
             </div>
             {searchBarDiv()}
-            {/*{isMobile ? null : searchBarDiv()}*/}
           </div>
 
           <img className='main_image' src={mainImage} width='45%' height='45%'/>
 
         </div>
-        {
-          // isMobile ? searchBarDiv() : null
-        }
       </div>
     );
   };
