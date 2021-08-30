@@ -2,9 +2,13 @@ import React from 'react';
 import logo from "../assets/lighthouse.png";
 import {Link, useHistory} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
+import {isMobile} from "react-device-detect";
+import background from "../assets/background.png";
 
 const AppHeader = () => {
   const history = useHistory()
+
+  const topBarPadding = isMobile ? "10%" : "30%"
 
   return (
     <div className='appbar-container'>
@@ -13,7 +17,7 @@ const AppHeader = () => {
         history.replace('/')
       }}/>
 
-      <div className='appbar-buttons-container'>
+      <div className='appbar-buttons-container' style={{paddingLeft: `${topBarPadding}`, paddingRight: `${topBarPadding}`}}>
 
         <HashLink smooth className='appbar-link' to={'/#contact-us'}>
           <button className='appbar-button'>
