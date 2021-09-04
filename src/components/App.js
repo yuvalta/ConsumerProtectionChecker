@@ -15,7 +15,7 @@ import TestResult from "./TestResult";
 import ContactUs from "./ContactUs";
 
 const App = () => {
-  const {website} = useContext(UserContext);
+  const website = useContext(UserContext);
   const [sendToServer] = useSendToServer()
 
   const searchBarDiv = () => {
@@ -23,12 +23,29 @@ const App = () => {
       <div className='container'>
 
         <Link className='button-link' to="/testResult">
-          <button className='button' onClick={() => sendToServer(website)}>
+          <button className='button' onClick={() => sendToServer(website.website)}>
             תבדקו לי
           </button>
         </Link>
 
         <SearchBar/>
+
+        <Link className='suffix-button-link' to="/testResult">
+          <button className='suffix-button' onClick={() => {
+            sendToServer(website.website.concat(".com"))
+          }}>
+            .com
+          </button>
+        </Link>
+
+        <Link className='suffix-button-link' to="/testResult">
+          <button className='suffix-button' onClick={() => {
+            sendToServer(website.website.concat(".co.il"))
+          }}>
+            .co.il
+          </button>
+        </Link>
+
       </div>
     );
   };
@@ -52,7 +69,7 @@ const App = () => {
             {searchBarDiv()}
           </div>
 
-          {isMobile ? "" :  <img className='main_image' src={mainImage} width='45%' height='45%'/>}
+          {isMobile ? "" : <img className='main_image' src={mainImage} width='45%' height='45%'/>}
         </div>
 
         {isMobile ? <img className='main_image' src={mainImage} width='100%' height='45%'/> : ""}
@@ -66,8 +83,8 @@ const App = () => {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      width: '100vw',
-      height: '100vh',
+      width: '100%',
+      height: '100%',
       marginTop: '-9px'
     }}>
       <div>
