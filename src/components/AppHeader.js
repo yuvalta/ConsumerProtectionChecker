@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/lighthouse.png";
+import logo from "../assets/pelican_logo.png";
 import {Link, useHistory} from "react-router-dom";
 import {HashLink} from "react-router-hash-link";
 import {isMobile} from "react-device-detect";

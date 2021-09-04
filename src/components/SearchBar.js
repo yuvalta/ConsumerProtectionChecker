@@ -1,8 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
-import TextField from '@material-ui/core/TextField';
 import {UserContext} from '../UserContext';
 import useSendToServer, {sio} from "../hooks/useSendToServer";
-import useStyles from "../hooks/useStyles";
 import '../stylesheet.css'
 import {useHistory} from "react-router-dom";
 
@@ -39,7 +37,6 @@ const SearchBar = () => {
 
   function validateWebsiteValue(event) {
     const website_address = event.target.value;
-    debugger
     if (website_address.length > MAX_LENGTH_WEBSITE_URL) {
       setError('קישור ארוך מידי')
       event.target.value = website_address.substr(0, MAX_LENGTH_WEBSITE_URL)
@@ -47,7 +44,7 @@ const SearchBar = () => {
     } else if (website_address.length === 0) {
       setError('')
       return
-    } else if (!/[A-Za-z0-9]/.test(website_address)) {
+    } else if (!/[A-Za-z0-9-_]/.test(website_address)) {
       setError('אותיות באנגלית בלבד')
       event.target.value = ''
       return

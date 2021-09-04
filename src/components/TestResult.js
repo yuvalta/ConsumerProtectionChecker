@@ -9,27 +9,50 @@ import GetUserData from "./GetUserData";
 import {sio} from "../hooks/useSendToServer";
 
 const TestResult = () => {
-  const {
-    openToast, statusToast, progress, messageToast, setSubmitDate, userEmail, userPhone, userFullName, submitDate
-  } = useContext(UserContext);
+  const {openToast, statusToast, progress, messageToast} = useContext(UserContext);
 
   const history = useHistory()
 
+  function getErrorFromString(error_string) {
+    switch (error_string) {
+      case 'WEBSITE_NOT_FOUND':
+        return 'נראה שהאתר לא נמצא, וודאו שהכתובת קיימת 👻'
+      case 'WEBSITE_NAME_ERROR':
+        return 'נראה שיש תווים לא תקינים בכתובת האתר 😵'
+    }
+  }
+
   const showResults = () => {
-    return (
-      <div className='user-form-container'>
+    if (statusToast === 'error') {
+      return (<div className='user-form-container'>
         <h1>
-          הבדיקה הסתיימה!
+          שגיאה בסריקת האתר...
         </h1>
+        <br/>
 
+        <iframe src="https://giphy.com/embed/dJYoOVAWf2QkU" frameBorder="0"/>
+
+        <br/>
         <p>
-          {messageToast}
+          {getErrorFromString(messageToast)}
         </p>
+      </div>)
+    } else {
+      return (
+        <div className='user-form-container'>
+          <h1>
+            הבדיקה הסתיימה!
+          </h1>
 
-        <GetUserData/>
+          <p>
+            {messageToast}
+          </p>
 
-      </div>
-    );
+          <GetUserData/>
+
+        </div>
+      );
+    }
   };
 
   const infinity_loadingbar = <div className="loadingio-spinner-dual-ring-4pm97gr5npk">

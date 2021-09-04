@@ -28,10 +28,8 @@ const useSendToServer = () => {
         console.log(score)
 
         setProgress(0)
-        // setMessageToast(`סריקה הסתיימה בהצלחה - ליקויים בשווי של ${score}`);
         setOpenToast(false)
         setMessageToast(` ליקויים בשווי של ${score}`);
-        // setStatusToast('success');
       });
 
       sio.on('status_update', (data) => {
