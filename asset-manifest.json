@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ConsumerProtectionChecker/static/css/main.f2a0afd9.chunk.css",
-    "main.js": "/ConsumerProtectionChecker/static/js/main.9bb023f9.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.9bb023f9.chunk.js.map",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.c0cdb79f.chunk.js",
+    "main.js.map": "/ConsumerProtectionChecker/static/js/main.c0cdb79f.chunk.js.map",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
     "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
-    "static/js/2.5749bebc.chunk.js": "/ConsumerProtectionChecker/static/js/2.5749bebc.chunk.js",
-    "static/js/2.5749bebc.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.5749bebc.chunk.js.map",
+    "static/js/2.08008571.chunk.js": "/ConsumerProtectionChecker/static/js/2.08008571.chunk.js",
+    "static/js/2.08008571.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.08008571.chunk.js.map",
     "index.html": "/ConsumerProtectionChecker/index.html",
     "static/css/main.f2a0afd9.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.f2a0afd9.chunk.css.map",
-    "static/js/2.5749bebc.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.5749bebc.chunk.js.LICENSE.txt",
+    "static/js/2.08008571.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.08008571.chunk.js.LICENSE.txt",
     "static/media/stylesheet.css": "/ConsumerProtectionChecker/static/media/Rubik_300.3a8e5377.ttf",
     "static/media/background.2c4ca7a7.png": "/ConsumerProtectionChecker/static/media/background.2c4ca7a7.png",
     "static/media/background_gradient.43ed4131.png": "/ConsumerProtectionChecker/static/media/background_gradient.43ed4131.png",
@@ -17,13 +17,12 @@
     "static/media/daniel.35a9c90c.jpg": "/ConsumerProtectionChecker/static/media/daniel.35a9c90c.jpg",
     "static/media/elliot.e908aca1.jpg": "/ConsumerProtectionChecker/static/media/elliot.e908aca1.jpg",
     "static/media/helen.3e1104e3.jpg": "/ConsumerProtectionChecker/static/media/helen.3e1104e3.jpg",
-    "static/media/lighthouse.96933509.png": "/ConsumerProtectionChecker/static/media/lighthouse.96933509.png",
     "static/media/website_man_image.7b901eed.png": "/ConsumerProtectionChecker/static/media/website_man_image.7b901eed.png"
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
-    "static/js/2.5749bebc.chunk.js",
+    "static/js/2.08008571.chunk.js",
     "static/css/main.f2a0afd9.chunk.css",
-    "static/js/main.9bb023f9.chunk.js"
+    "static/js/main.c0cdb79f.chunk.js"
   ]
 }
