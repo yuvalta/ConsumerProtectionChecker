@@ -9,7 +9,7 @@ import GetUserData from "./GetUserData";
 import {sio} from "../hooks/useSendToServer";
 
 const TestResult = () => {
-  const {openToast, statusToast, progress, messageToast} = useContext(UserContext);
+  const {openToast, statusToast, progress, messageHeaderToast, messageBodyToast} = useContext(UserContext);
 
   const history = useHistory()
 
@@ -34,7 +34,7 @@ const TestResult = () => {
 
         <br/>
         <p>
-          {getErrorFromString(messageToast)}
+          {getErrorFromString(messageHeaderToast)}
         </p>
       </div>)
     } else {
@@ -45,7 +45,11 @@ const TestResult = () => {
           </h1>
 
           <p>
-            {messageToast}
+            {messageHeaderToast}
+          </p>
+
+          <p>
+            {messageBodyToast}
           </p>
 
           <GetUserData/>
@@ -73,7 +77,7 @@ const TestResult = () => {
           :
           <div className='progressbar'>
 
-            {(messageToast === 'סריקה התחילה' || messageToast === 'מחשב...') ?
+            {(messageHeaderToast === 'סריקה התחילה' || messageHeaderToast === 'מחשב...') ?
               infinity_loadingbar
               :
               <div>

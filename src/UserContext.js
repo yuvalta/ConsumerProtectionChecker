@@ -6,7 +6,8 @@ const UserProvider = ({children}) => {
   const [website, setWebsite] = useState("None");
   const [openToast, setOpenToast] = useState(false);
   const [statusToast, setStatusToast] = useState("info");
-  const [messageToast, setMessageToast] = useState(false);
+  const [messageHeaderToast, setMessageHeaderToast] = useState(false);
+  const [messageBodyToast, setMessageBodyToast] = useState('');
   const [progress, setProgress] = useState(0);
   const [userEmail, setUserEmail] = useState('empty');
   const [userFullName, setUserFullName] = useState('empty');
@@ -22,8 +23,8 @@ const UserProvider = ({children}) => {
         setOpenToast,
         statusToast,
         setStatusToast,
-        messageToast,
-        setMessageToast,
+        messageHeaderToast,
+        setMessageHeaderToast,
         progress,
         setProgress,
         userEmail,
@@ -33,7 +34,9 @@ const UserProvider = ({children}) => {
         userPhone,
         setUserPhone,
         submitDate,
-        setSubmitDate
+        setSubmitDate,
+        messageBodyToast,
+        setMessageBodyToast
       }}
     >
       {children}

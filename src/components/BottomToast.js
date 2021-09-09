@@ -9,13 +9,13 @@ function Alert(props) {
 }
 
 const BottomToast = () => {
-  const {openToast, setOpenToast, statusToast, messageToast} = useContext(UserContext);
+  const {openToast, setOpenToast, statusToast, messageHeaderToast} = useContext(UserContext);
 
   return (
     <Snackbar open={openToast}
               onClose={statusToast === 'error' || statusToast === 'success' ? handleClose : null}>
       <Alert className='bottom_toast'  severity={statusToast} icon={false}>
-        {messageToast}
+        {messageHeaderToast}
       </Alert>
     </Snackbar>
   );
