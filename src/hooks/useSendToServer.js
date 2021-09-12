@@ -35,7 +35,7 @@ const useSendToServer = () => {
 
         setProgress(0)
         setOpenToast(false)
-        setMessageHeaderToast(`קיימים ליקויים אפשריים בשווי של ${numberWithCommas(score)} ש"ח 😨`);
+        setMessageHeaderToast(`קיימים ליקויים אפשריים בשווי של ${(score)} ש"ח 😨`);
         setMessageBodyToast(' רוצים עזרה והכוונה בטיפול בליקויים? דברו איתנו, אנחנו יודעים מה לעשות 🤝');
       });
 
@@ -57,9 +57,9 @@ const useSendToServer = () => {
     sio.emit('start_checking', url)
   };
 
-  function numberWithCommas(number) {
-    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  }
+  // function numberWithCommas(number) {
+  //   return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  // }
 
   return [sendToServer];
 }
