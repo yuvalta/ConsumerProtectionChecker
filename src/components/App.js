@@ -13,6 +13,7 @@ import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 import About from "./About";
 import TestResult from "./TestResult";
 import ContactUs from "./ContactUs";
+import BarcodeScanner from "./BarcodeScanner";
 
 const App = () => {
   const website = useContext(UserContext);
@@ -97,9 +98,26 @@ const App = () => {
               <TestResult/>
             </Route>
 
+            <Route path="/barcode-scanner">
+              <BarcodeScanner/>
+            </Route>
+
+            <Route path="/web-scanner">
+              {getMainBodyWebsite()}
+            </Route>
+
             <Route path="/">
               <div className='all-page-container'>
-                {getMainBodyWebsite()}
+                <div className='one-page-part'>
+                   {/*TODO: change this*/}
+                  <br/><br/><br/><br/>
+                  <br/><br/><br/><br/>
+                  <br/><br/><br/><br/>
+                  <h1>TBD</h1>
+                  <br/><br/><br/><br/>
+                  <br/><br/><br/><br/>
+                  <br/><br/><br/><br/>
+                </div>
 
                 <About className='one-page-part'/>
 

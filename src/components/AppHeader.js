@@ -7,7 +7,7 @@ import {isMobile} from "react-device-detect";
 const AppHeader = () => {
   const history = useHistory()
 
-  const topBarPadding = isMobile ? "10%" : "30%"
+  const topBarPadding = isMobile ? "10%" : "20%"
   const topBarTopPadding = isMobile ? "4%" : "1%"
 
   return (
@@ -34,6 +34,18 @@ const AppHeader = () => {
             מי אנחנו
           </button>
         </HashLink>
+
+        <Link className='appbar-link' to="/barcode-scanner">
+          <button className='appbar-button'>
+            סריקת מוצר
+          </button>
+        </Link>
+
+        <Link className='appbar-link' to="/web-scanner">
+          <button className='appbar-button'>
+            סורק האתרים
+          </button>
+        </Link>
 
         <Link className='appbar-link' to="/">
           <button className='appbar-button'>
