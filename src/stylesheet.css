@@ -70,6 +70,21 @@ p {
     height: 5vh;
 }
 
+.enter-barcode-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.enter-barcode-item {
+    flex: 2;
+}
+
+.enter-barcode-item-input {
+    flex: 1;
+}
+
 .searchbar {
     flex: 5;
     margin-left: 1%;
@@ -154,7 +169,7 @@ p {
     padding-right: 1%;
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     justify-content: left;
 }
 
@@ -182,6 +197,8 @@ p {
 .appbar-button {
     flex: 1;
     margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     background-color: transparent;
     border-radius: 10px;
     color: black;
@@ -241,8 +258,6 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 5%;
-    padding-right: 10%;
-    padding-left: 10%;
 }
 
 .all-page-container {

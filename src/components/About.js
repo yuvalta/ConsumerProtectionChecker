@@ -9,8 +9,8 @@ const About = () => {
       backgroundImage: `url(${background_gradient})`,
       paddingTop: '5%',
       paddingBottom: '5%',
-      // paddingRight: '10%',
-      // paddingLeft: '10%'
+      paddingRight: '10%',
+      paddingLeft: '10%'
     }}>
       <h1>
         מי אנחנו?
