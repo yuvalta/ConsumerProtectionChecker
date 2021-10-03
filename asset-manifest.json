@@ -1,19 +1,14 @@
 {
   "files": {
-    "main.css": "/ConsumerProtectionChecker/static/css/main.0b1de88e.chunk.css",
-    "main.js": "/ConsumerProtectionChecker/static/js/main.99e022bd.chunk.js",
-    "main.js.map": "/ConsumerProtectionChecker/static/js/main.99e022bd.chunk.js.map",
+    "main.css": "/ConsumerProtectionChecker/static/css/main.310a6699.chunk.css",
+    "main.js": "/ConsumerProtectionChecker/static/js/main.95e466cc.chunk.js",
     "runtime-main.js": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js",
-    "runtime-main.js.map": "/ConsumerProtectionChecker/static/js/runtime-main.27267620.js.map",
-    "static/js/2.f4d87cc4.chunk.js": "/ConsumerProtectionChecker/static/js/2.f4d87cc4.chunk.js",
-    "static/js/2.f4d87cc4.chunk.js.map": "/ConsumerProtectionChecker/static/js/2.f4d87cc4.chunk.js.map",
+    "static/js/2.66a5edc5.chunk.js": "/ConsumerProtectionChecker/static/js/2.66a5edc5.chunk.js",
     "index.html": "/ConsumerProtectionChecker/index.html",
-    "static/css/main.0b1de88e.chunk.css.map": "/ConsumerProtectionChecker/static/css/main.0b1de88e.chunk.css.map",
-    "static/js/2.f4d87cc4.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.f4d87cc4.chunk.js.LICENSE.txt",
+    "static/js/2.66a5edc5.chunk.js.LICENSE.txt": "/ConsumerProtectionChecker/static/js/2.66a5edc5.chunk.js.LICENSE.txt",
     "static/media/stylesheet.css": "/ConsumerProtectionChecker/static/media/Rubik_300.3a8e5377.ttf",
     "static/media/background.2c4ca7a7.png": "/ConsumerProtectionChecker/static/media/background.2c4ca7a7.png",
     "static/media/background_gradient.43ed4131.png": "/ConsumerProtectionChecker/static/media/background_gradient.43ed4131.png",
-    "static/media/bottom_wave.6f858a90.png": "/ConsumerProtectionChecker/static/media/bottom_wave.6f858a90.png",
     "static/media/daniel.35a9c90c.jpg": "/ConsumerProtectionChecker/static/media/daniel.35a9c90c.jpg",
     "static/media/elliot.e908aca1.jpg": "/ConsumerProtectionChecker/static/media/elliot.e908aca1.jpg",
     "static/media/helen.3e1104e3.jpg": "/ConsumerProtectionChecker/static/media/helen.3e1104e3.jpg",
@@ -21,8 +16,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.27267620.js",
-    "static/js/2.f4d87cc4.chunk.js",
-    "static/css/main.0b1de88e.chunk.css",
-    "static/js/main.99e022bd.chunk.js"
+    "static/js/2.66a5edc5.chunk.js",
+    "static/css/main.310a6699.chunk.css",
+    "static/js/main.95e466cc.chunk.js"
   ]
 }
