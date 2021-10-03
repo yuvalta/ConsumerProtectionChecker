@@ -46,7 +46,7 @@ const useSendToServer = () => {
         setProgress(currentPercentages)
         setMessageHeaderToast(data.phase);
       });
-    }, [setMessageBodyToast, setMessageHeaderToast, setOpenToast, setProgress, setStatusToast]
+    }, []
   )
 
   const sendToServer = (url) => {
