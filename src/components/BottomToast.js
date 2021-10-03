@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import {UserContext} from "../UserContext";
-import useStyles from "../hooks/useStyles";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;

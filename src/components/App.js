@@ -1,13 +1,12 @@
-import React, {createRef, useContext, useEffect} from "react";
+import React, {useContext} from "react";
 import AppHeader from "./AppHeader";
 import SearchBar from "./SearchBar";
-import useSendToServer, {sio} from '../hooks/useSendToServer';
+import useSendToServer from '../hooks/useSendToServer';
 import {UserContext} from '../UserContext';
 import mainImage from '../assets/website_man_image.png'
 import background from "../assets/background.png";
 import {isMobile} from "react-device-detect";
 
-import background_gradient from "../assets/background_gradient.png";
 import '../stylesheet.css'
 import {Route, Switch, BrowserRouter, Link} from "react-router-dom";
 import About from "./About";
@@ -70,10 +69,10 @@ const App = () => {
             {searchBarDiv()}
           </div>
 
-          {isMobile ? "" : <img className='main_image' src={mainImage} width='45%' height='45%'/>}
+          {isMobile ? "" : <img className='main_image' alt="main" src={mainImage} width='45%' height='45%'/>}
         </div>
 
-        {isMobile ? <img className='main_image' src={mainImage} width='100%' height='45%'/> : ""}
+        {isMobile ? <img className='main_image' alt="main" src={mainImage} width='100%' height='45%'/> : ""}
       </div>
     );
   };
@@ -108,16 +107,7 @@ const App = () => {
 
             <Route path="/">
               <div className='all-page-container'>
-                <div className='one-page-part'>
-                   {/*TODO: change this*/}
-                  <br/><br/><br/><br/>
-                  <br/><br/><br/><br/>
-                  <br/><br/><br/><br/>
-                  <h1>TBD</h1>
-                  <br/><br/><br/><br/>
-                  <br/><br/><br/><br/>
-                  <br/><br/><br/><br/>
-                </div>
+                {getMainBodyWebsite()}
 
                 <About className='one-page-part'/>
 

@@ -11,13 +11,9 @@ const AppHeader = () => {
   const topBarTopPadding = isMobile ? "4%" : "1%"
 
   return (
-    <div className='appbar-container' style={{paddingTop: `${topBarTopPadding}`
+    <div className='appbar-container' style={{
+      paddingTop: `${topBarTopPadding}`
     }}>
-
-      <img src={logo} className='logo' onClick={() => {
-        history.replace('/')
-      }}/>
-
       <div className='appbar-buttons-container' style={{
         paddingLeft: `${topBarPadding}`,
         paddingRight: `${topBarPadding}`
@@ -41,7 +37,7 @@ const AppHeader = () => {
           </button>
         </Link>
 
-        <Link className='appbar-link' to="/web-scanner">
+        <Link className='appbar-link' to="/#web-scanner">
           <button className='appbar-button'>
             סורק האתרים
           </button>
@@ -54,6 +50,10 @@ const AppHeader = () => {
         </Link>
 
       </div>
+
+      <img src={logo} alt="logo" className='logo' onClick={() => {
+        history.replace('/')
+      }}/>
     </div>
   );
 }

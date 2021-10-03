@@ -14,7 +14,7 @@ const SearchBar = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-      console.log('abort')
+      // console.log('abort')
       sio.emit('abort')
     }, []
   )

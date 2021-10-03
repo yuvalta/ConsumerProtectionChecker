@@ -1,17 +1,12 @@
 import React, {useContext} from 'react';
 import ProgressBar from "react-customizable-progressbar";
-import {isMobile} from 'react-device-detect';
 import {UserContext} from "../UserContext";
 import {COLORS} from "../colors";
 import BottomToast from "./BottomToast";
-import {useHistory} from "react-router-dom";
 import GetUserData from "./GetUserData";
-import {sio} from "../hooks/useSendToServer";
 
 const TestResult = () => {
   const {openToast, statusToast, progress, messageHeaderToast, messageBodyToast} = useContext(UserContext);
-
-  const history = useHistory()
 
   function getErrorFromString(error_string) {
     switch (error_string) {
@@ -19,6 +14,8 @@ const TestResult = () => {
         return 'נראה שהאתר לא נמצא, וודאו שהכתובת קיימת 👻'
       case 'WEBSITE_NAME_ERROR':
         return 'נראה שיש תווים לא תקינים בכתובת האתר 😵'
+      default:
+        return 'שגיאה כללית';
     }
   }
 
@@ -30,7 +27,7 @@ const TestResult = () => {
         </h1>
         <br/>
 
-        <iframe src="https://giphy.com/embed/dJYoOVAWf2QkU" frameBorder="0"/>
+        <iframe src="https://giphy.com/embed/dJYoOVAWf2QkU" frameBorder="0" title="gif error"/>
 
         <br/>
         <p>

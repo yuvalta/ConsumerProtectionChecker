@@ -17,21 +17,21 @@ const useSendToServer = () => {
 
   useEffect(() => {
       sio.on('connect', () => {
-        console.log('connected')
+        // console.log('connected')
       });
 
       sio.on('disconnect', () => {
-        console.log('disconnected')
+        // console.log('disconnected')
       });
 
       sio.on('error', (error_data) => {
-        console.log('error!')
+        // console.log('error!')
         setMessageHeaderToast(error_data);
         setStatusToast('error');
       });
 
       sio.on('final_score', (score) => {
-        console.log(score)
+        // console.log(score)
 
         setProgress(0)
         setOpenToast(false)
@@ -41,12 +41,12 @@ const useSendToServer = () => {
 
       sio.on('status_update', (data) => {
         const currentPercentages = parseInt(data.percentages);
-        console.log(data)
+        // console.log(data)
 
         setProgress(currentPercentages)
         setMessageHeaderToast(data.phase);
       });
-    }, []
+    }, [setMessageBodyToast, setMessageHeaderToast, setOpenToast, setProgress, setStatusToast]
   )
 
   const sendToServer = (url) => {
@@ -56,10 +56,6 @@ const useSendToServer = () => {
 
     sio.emit('start_checking', url)
   };
-
-  // function numberWithCommas(number) {
-  //   return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  // }
 
   return [sendToServer];
 }

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
 import {isMobile} from "react-device-detect";
 
